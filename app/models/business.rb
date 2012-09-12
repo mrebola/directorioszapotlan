@@ -5,7 +5,7 @@ attr_accessible :address, :cellphone, :city, :description, :email, :keywords, :n
 		if search
 			find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
 		else
-			#find(:all)
+			find(:all)
 		end
 	end
 
