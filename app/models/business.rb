@@ -10,6 +10,3 @@ attr_accessible :address, :cellphone, :city, :description, :email, :keywords, :n
 	end
 
 end
-
-
-
