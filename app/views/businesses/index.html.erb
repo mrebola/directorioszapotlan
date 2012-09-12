@@ -1,10 +1,44 @@
-<%= form_tag businesses_path, method: 'get' do %>
+<%= stylesheet_link_tag "styles" %>
+<!--[if lt IE 7]>
+<style media="screen" type="text/css">
+
+#container {
+  height:100%;
+}
+
+</style>
+<![endif]-->
+
+<div id="header">
+<div id="menu">
+<ul>
+    <li><a href="registrar/">Registrar Negocio</a></li>
+    <li><a href="contacto/">Contacto</a></li>
+    <li><a href="accesar/">Accesar</a></li>
+</ul>
+</div>
+<div id="social"><span id="facebook">
+<a href="http://facebook.com/">
+<%= image_tag "facebook.png", :size => "26x26" , :alt => "facebook"  %></a></span> 
+
+<span id="twitter"><a href="http://twitter.com/">
+<%= image_tag "twitter.png", :size => "26x26" , :alt => "twitter"  %></a></span>
+</a></span></div>
+</div>
+<div id="center">
+    <div id="logo"><%= image_tag "encuentralomejorlogo.png", :alt => "directorioszapotlan"  %></div>
+    <div id="searchbox">
+    
+    <%= form_tag businesses_path, method: 'get' do %>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", name: nil %>
+    <%= submit_tag "", name: nil , :id => "searchbutton"  %>
 <% end %>
 
+    <!-- <input type="text" name="search" id="search" value="Busqueda" class="clearme"> <input type="submit" id="searchbutton" value=""/> -->
+    
 
-<br />
+    </div>
+</div>
 
 <% for business in @businesses %>
   <%= link_to business.name, business_path(business) %><br>
@@ -22,3 +56,9 @@
 
 
 <%= link_to 'New Business', new_business_path %>
+
+<div id="footer">www.encuentralomejor.com Todos los derechos reservados &copy; 2012 Desarollado por <a href="http://morphcom.com">Cesar Gaytán</a></div>
+
+
+
+
